@@ -17,7 +17,7 @@ a live, nested agent trace. Domain-neutral; **demonstrated on a Customer-Experie
               ▼  WRITE   ── stream a cited answer from the verified facts (+ caveats)
 ```
 
-Full design, agent roles/interactions, and a mermaid diagram: **[`../docs/architecture.md`](../docs/architecture.md)**.
+Full design, agent roles/interactions, and a mermaid diagram: **[`docs/architecture.md`](docs/architecture.md)**.
 
 ---
 
@@ -96,9 +96,9 @@ Observability + assets:
 
 ## Deliverables (siblings of this folder)
 
-- **[`../docs/architecture.md`](../docs/architecture.md)** — architecture overview, mermaid diagram, agent roles/interactions, guardrails, scaling/monitoring, CX.
-- **[`../samples/`](../samples/)** — example research query + the generated output.
-- **[`../demo-video/`](../demo-video/)** — the screen recording.
+- **[`docs/architecture.md`](docs/architecture.md)** — architecture overview, mermaid diagram, agent roles/interactions, guardrails, scaling/monitoring, CX.
+- **[`samples/`](samples/)** — example research query + the generated output.
+- **[`demo-video`](https://drive.google.com/file/d/1IVyQ0UAkuqTY20M7ZflsAlaFyMcTnViM/view?usp=sharing)** — the screen recording.
 
 ---
 
@@ -107,4 +107,4 @@ Observability + assets:
 > included here to keep the submission focused — both passed: all 74 tests green, and the eval
 > scored **groundedness / coverage / citation-completeness = 1.00 / 1.00 / 1.00** on both golden
 > cases. The evaluation methodology (and how runtime guardrails detect hallucinations) is described
-> in `../docs/architecture.md` §6.
+> in `docs/architecture.md` §6.
