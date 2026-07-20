@@ -1,0 +1,1 @@
+In the souces, when copying the output and actual full links got stripped, only placeholder remains
