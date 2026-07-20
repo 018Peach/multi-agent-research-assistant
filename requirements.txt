@@ -1,0 +1,21 @@
+# Multi-Agent Research Assistant — dependencies (pinned to verified versions).
+# Python 3.11–3.13 (use 3.13; avoid 3.14 — uvicorn isn't 3.14-ready, blank UI).
+#   pip install -r requirements.txt
+
+# ── Core: LangGraph + Gemini + Chainlit ──────────────────────────────────────
+langgraph==1.2.6
+langgraph-prebuilt==1.1.0            # create_react_agent (agentic nodes)
+langgraph-checkpoint-sqlite==3.1.0   # AsyncSqliteSaver (per-session memory)
+langchain-google-genai==4.2.5        # Gemini access + tool/stream events
+langchain-core==1.4.8                # messages / add_messages / @tool
+google-genai==2.9.0                  # keyless Gemini Google Search fallback (tools/search.py)
+chainlit==2.11.1                     # the live nested-trace UI
+pydantic==2.13.4
+pydantic-settings==2.14.2            # typed config from .env
+python-dotenv==1.2.2
+
+# ── Tools (web search + fetch) ───────────────────────────────────────────────
+tavily-python==0.7.26
+exa-py==2.14.0
+firecrawl-py==4.30.2
+

@@ -1,0 +1,25 @@
+# Chainlit configuration — Multi-Agent Research Assistant (spec §8.1).
+
+[project]
+enable_telemetry = false
+# generous session timeout for multi-agent turns under free-tier rate limits
+session_timeout = 3600
+
+[features]
+# Spontaneous upload of a chart/PDF alongside a message (the multimodal input, §9).
+[features.spontaneous_file_upload]
+    enabled = true
+    accept = ["image/*", "application/pdf"]
+    max_files = 4
+    max_size_mb = 20
+
+[UI]
+name = "Multi-Agent Research Assistant"
+description = "Plan → parallel research → critic → write, with a live agent trace."
+# show the full nested agent trace (thinking + tool calls)
+cot = "full"
+# wrap long URLs/tokens so they don't overflow into scroll boxes
+custom_css = "/public/custom.css"
+
+[meta]
+generated_by = "2.11.0"

@@ -1,0 +1,28 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# LangGraph / SQLite checkpoint DBs
+*.db
+*.sqlite
+*.sqlite3
+
+# Chainlit runtime
+.chainlit/translations/
+.files/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

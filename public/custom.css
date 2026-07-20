@@ -1,0 +1,69 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Multi-Agent Research Assistant — refined dark theme, violet accent (spec §8).
+   Overrides Chainlit's shadcn design tokens (HSL triples: "H S% L%") + light
+   polish. Kept minimal: no extra chrome, just a cleaner, more modern surface.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* `!important` because custom.css is injected before Chainlit's bundle, so a plain
+   `.dark{}` would lose the source-order tie to the bundle's own `.dark{}`. */
+:root {
+  --primary: 252 95% 67% !important;            /* violet accent */
+  --primary-foreground: 0 0% 100% !important;
+  --ring: 252 95% 67% !important;
+  --radius: 0.9rem !important;                  /* softer corners */
+}
+
+.dark, html.dark, body.dark {
+  --background: 222 24% 6% !important;          /* deep near-black canvas (#0b0d12-ish) */
+  --foreground: 220 16% 92% !important;
+  --card: 223 22% 10% !important;
+  --card-foreground: 220 16% 92% !important;
+  --popover: 223 24% 8% !important;
+  --popover-foreground: 220 16% 92% !important;
+  --primary: 252 95% 67% !important;           /* violet accent */
+  --primary-foreground: 0 0% 100% !important;
+  --secondary: 223 18% 15% !important;
+  --secondary-foreground: 220 16% 92% !important;
+  --muted: 223 18% 15% !important;
+  --muted-foreground: 220 12% 62% !important;
+  --accent: 223 20% 16% !important;
+  --accent-foreground: 220 16% 92% !important;
+  --border: 223 16% 19% !important;
+  --input: 223 16% 19% !important;
+  --ring: 252 95% 67% !important;
+}
+
+/* Crisper text. */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Violet, underline-on-hover links in answers (no raw long URLs, host labels). */
+.message-content a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+}
+.message-content a:hover { text-decoration: underline; }
+
+/* Softer corners on the trace steps so the nested agent trace reads as blocks. */
+[class*="step"] { border-radius: var(--radius); }
+
+/* Wrap long content (URLs, unbroken tokens) so nothing overflows into scrollboxes. */
+.message-content, .message-content *,
+[class*="step"] *,
+p, li, a, span, code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+pre, pre code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Hide the top-right "Readme" button (chainlit.md is also emptied as the primary
+   removal; this is a CSS fallback in case the build still renders the trigger). */
+a[href="/readme"],
+#readme-button,
+button[aria-label="Readme" i] { display: none !important; }
